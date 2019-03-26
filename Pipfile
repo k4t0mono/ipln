@@ -7,13 +7,10 @@ verify_ssl = true
 
 [packages]
 pandas = "*"
-h5py = "*"
 jupyter = "*"
 nltk = "*"
 spacy = "*"
-gensim = "*"
 numpy = "*"
-nlpnt = "*"
 
 [requires]
 python_version = "3.7"
