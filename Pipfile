@@ -1,0 +1,19 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+
+[packages]
+pandas = "*"
+h5py = "*"
+jupyter = "*"
+nltk = "*"
+spacy = "*"
+gensim = "*"
+numpy = "*"
+nlpnt = "*"
+
+[requires]
+python_version = "3.7"
