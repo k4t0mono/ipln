@@ -11,6 +11,9 @@ jupyter = "*"
 nltk = "*"
 spacy = "*"
 numpy = "*"
+jupyterthemes = "*"
+beautifulsoup4 = "*"
+justext = "*"
 
 [requires]
 python_version = "3.7"
