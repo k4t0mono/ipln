@@ -15,6 +15,9 @@ numpy = "*"
 jupyterthemes = "*"
 beautifulsoup4 = "*"
 justext = "*"
+gensim = "*"
+unidecode = "*"
+html2text = "*"
 
 [requires]
-python_version = "3.7"
+python_version = "3"
