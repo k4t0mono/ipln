@@ -1,1 +1,1 @@
-__all__ = [ "lexical" ]
+__all__ = [ "lexical", "progress" ]

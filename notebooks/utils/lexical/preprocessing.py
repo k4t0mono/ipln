@@ -1,4 +1,6 @@
 import nltk
+import unidecode
+import string
 
 
 class Preprocessing:
@@ -7,22 +9,25 @@ class Preprocessing:
         self.sent_tokenizer = nltk.data.load('tokenizers/punkt/portuguese.pickle')
         self.stemmer = nltk.stem.RSLPStemmer()
 
-    def steammize(self, tokens):
-        return [ self.stemmer.stem(x) for x in tokens ]
-    
-    def tokenize_sents(self, txt):
-        sents = self.sent_tokenizer.tokenize(txt)
-        return sents
-    
-    def tokenize_words(self, sent):
-        tokens = nltk.tokenize.word_tokenize(sent)
-        return(tokens)
-    
-    def tokenize_text(self, txt):
-        tokens = []
-        
-        sents = self.tokenize_sents(txt)
-        for s in sents:
-            tokens.append(self.tokenize_words(s))
-        
+    def remove_accents(self, text):
+        return unidecode.unidecode(text)
+
+    def remove_punctuation(self, text):
+        return text.translate(str.maketrans('','',string.punctuation))
+
+    def tokenize_sentences(self, text):
+        sentences = self.sent_tokenizer.tokenize(text)
+        return sentences
+
+    def tokenize_words(self, text):
+        tokens = nltk.tokenize.word_tokenize(text)
         return tokens
+
+    def lemmatize(self, text):
+        return text
+
+    def stemmize(self, tokens):
+        return [self.stemmer.stem(word) for word in tokens]
+
+    def lowercase(self, text):
+        return text.lower()
