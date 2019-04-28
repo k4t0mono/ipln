@@ -18,6 +18,7 @@ justext = "*"
 gensim = "*"
 unidecode = "*"
 html2text = "*"
+prettytable = "*"
 
 [requires]
 python_version = "3"
