@@ -1,6 +1,7 @@
 import nltk
 import unidecode
 import string
+import spacy
 
 
 class Preprocessing:
@@ -31,3 +32,29 @@ class Preprocessing:
 
     def lowercase(self, text):
         return text.lower()
+    
+    def pos_tag(self, text):
+        nlp = spacy.load('pt_core_news_sm')
+        doc = nlp(text)
+
+        tokens = []
+        for t in doc:
+            tokens.append((t.text, t.pos_))
+
+        return tokens
+    
+
+    def parse_text(self, text):
+        nlp = spacy.load('pt_core_news_sm')
+        doc = nlp(text)
+
+        tokens = []
+        for t in doc:
+            if t.dep_ == 'ROOT':
+                h = None
+            else:
+                h = t.head.text
+
+            tokens.append((t.text, t.dep_, h))
+
+        return tokens
