@@ -12,29 +12,45 @@ class Preprocessing:
         self.nlp = spacy.load('pt_core_news_sm')
 
     def remove_accents(self, text):
+        "Remove os acentos do texto de entrada"
+        
         return unidecode.unidecode(text)
 
     def remove_punctuation(self, text):
+        "Remove a pontuação do texto de entrada"
+        
         return text.translate(str.maketrans('','',string.punctuation))
 
     def tokenize_sentences(self, text):
+        "Transforma o texto de entrada em uma lista de sentenças"
+        
         sentences = self.sent_tokenizer.tokenize(text)
         return sentences
 
     def tokenize_words(self, text):
+        "Transforma o texto de entrada em uma lista de palavras"
+        
         tokens = nltk.tokenize.word_tokenize(text)
         return tokens
 
-    def lemmatize(self, text):
-        return self.nlp(text)[0].lemma_
+    def lemmatize(self, word):
+        "Retorna o lemma de uma palavra de entrada"
+        
+        return self.nlp(word)[0].lemma_
 
     def stemmize(self, tokens):
+        "Retorna uma lista de stem da lista de tokens de entrada"
+        
         return [self.stemmer.stem(word) for word in tokens]
 
     def lowercase(self, text):
+        "Transforama o texto de entrada em lowercase"
+        
         return text.lower()
     
     def pos_tag(self, text):
+        "Retorna uma lista de (palavra, pos_tag) do texto de entrada"
+        
         doc = self.nlp(text)
 
         tokens = []
@@ -44,6 +60,8 @@ class Preprocessing:
         return tokens
     
     def parse_text(self, text):
+        "Retora uma lista de (palavra, dependencia, pai) do texto de entrada"
+        
         doc = self.nlp(text)
 
         tokens = []
@@ -58,6 +76,11 @@ class Preprocessing:
         return tokens
     
     def get_svo(self, txt):
+        """
+        Retorna uma lista de (sujeito, verbo, objeto) para cada raiz
+        encontrada do texto de entrada
+        """
+        
         doc = self.nlp(txt)
 
         roots = []
