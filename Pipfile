@@ -19,6 +19,8 @@ gensim = "*"
 unidecode = "*"
 html2text = "*"
 prettytable = "*"
+xmltodict = "*"
+sklearn = "*"
 
 [requires]
 python_version = "3"
