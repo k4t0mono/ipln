@@ -1,0 +1,34 @@
+[[MLP]]
+name = "mlp 00"
+hidden = "(100, 100)"
+iters = 522.0
+train = "normalized tokens"
+Word2Vec = "CBOW 50"
+file = "m_mlp_00.pkl.gz"
+md5 = "9dc1881996fc43f5bcb9b4fc778a3e77"
+
+  [MLP.accuracy]
+  test = 0.505
+  train = 0.676
+
+[[SVC]]
+name = "svc 00"
+train = "normalized tokens"
+Word2Vec = "CBOW 50"
+file = "m_svc_00.pkl.gz"
+md5 = "323f2bed6e5eb67eb867634d73f769ee"
+
+  [SVC.accuracy]
+  test = 0.476
+  train = 0.488
+
+[[GNB]]
+name = "gnb 00"
+train = "normalized tokens"
+Word2Vec = "CBOW 50"
+file = "m_gnb_00.pkl.gz"
+md5 = "909160e86fb6338647485d15396251ba"
+
+  [GNB.accuracy]
+  test = 0.279
+  train = 0.286

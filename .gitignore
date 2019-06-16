@@ -1,6 +1,9 @@
 # Data
 data/
 *.pickle*
+*.pkl
+*.gz
+*.zip
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
