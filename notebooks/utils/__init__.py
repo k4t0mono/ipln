@@ -1,1 +1,1 @@
-__all__ = [ 'lexical', 'tui', 'syntax' ]
+__all__ = [ 'lexical', 'tui', 'syntax', 'semantical' ]

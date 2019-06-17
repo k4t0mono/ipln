@@ -11,6 +11,19 @@ md5 = "9dc1881996fc43f5bcb9b4fc778a3e77"
   test = 0.505
   train = 0.676
 
+[[MLP]]
+name = "mlp 01"
+hidden = "(100, 100)"
+iters = 500
+train = "lemmas"
+Word2Vec = "CBOW 50"
+file = "m_mlp_01.pkl.gz"
+md5 = "67e1c20c6149e16745055fe49ecefa9b"
+
+  [MLP.accuracy]
+  test = 0.513
+  train = 0.636
+
 [[SVC]]
 name = "svc 00"
 train = "normalized tokens"
